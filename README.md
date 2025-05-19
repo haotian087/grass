@@ -1,5 +1,42 @@
 
+脚本功能 1，注册帐号 2，挖矿
 
+建议只使用挖矿功能，我们只需设置帐号以及代理。
+
+1，安装脚本
+
+cd /root
+apt install git  pip tmux  -y
+git clone https://github.com/MsLolita/grass.git
+cd grass
+pip3 install -r requirements.txt
+2，设置帐号，代理
+
+帐号， 一个帐号写一行， /root/grass/data/accounts.txt
+
+格式为 邮箱:密码
+
+代理，一个代理一行，跟帐号的行数要对应好 /root/grass/data/proxies.txt
+
+格式为 username:password@ip:port
+
+代理一行一个，不能重复。帐号可以重复。代理可以比帐号多。
+
+人机交互（可选） /root/grass/data/config.py
+
+3，运行脚本
+
+cd /root/grass
+tmux new -s grass python3 main.py
+4, 查看运行状态
+
+tmux attach -t  grass
+5, 停止脚本
+
+tmux kill-session -t grass
+6， 删除脚本
+
+rm -rf   /root/grass
 
 Discover the latest `<crypto/>` moves in my Telegram Channel:
 
